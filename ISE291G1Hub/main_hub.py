@@ -3,7 +3,7 @@ import os
 import importlib.util
 
 st.title("ISE 291 Term 242 Section F22 Streamlit Hub")
-st.markdown("Welcome to the class's Streamlit Hub! Use the sidebar to navigate.")
+st.markdown("Welcome GROPU1.")
 
 # Absolute path to the 'apps' folder
 APPS_DIR = "ISE291G1Hub/apps"
