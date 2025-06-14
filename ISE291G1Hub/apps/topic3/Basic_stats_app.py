@@ -92,11 +92,39 @@ University of North Texas and University of Cincinnati round out the top five wi
     
     This heatmap shows how the top seven host institutions distribute students across all majors.
 
-- Colorado School of Mines not only hosts the most students overall but also sends sizable groups in ME, ISE, and MGT.
+1. Mechanical Engineering (ME)
 
-- Georgia Tech has the highest single-major concentration—45 Mechanical Engineering (ME) students—highlighting its strength in that field.
+Georgia Tech leads, hosting 45 ME students.
+Colorado School of Mines follows with 40.
+University of Florida then takes 34.
+Smaller ME cohorts scatter among Cincinnati, North Texas, and Arizona State.
 
-- University of Florida is strong in CS (24 students) and ISE (34 students).
+2. Electrical Engineering (EE)
+
+University of Florida is the top EE destination with 34 students.
+Colorado School of Mines hosts 27 EE students.
+University of North Texas comes next at 15.
+A handful of EE students also go to Georgia Tech and Cincinnati.
+
+3. Industrial & Systems Engineering (ISE)
+
+Colorado School of Mines again leads for ISE with 34 students.
+University of Florida hosts 24 ISE students.
+Georgia Tech follows at 16.
+The remainder are spread across Cincinnati, North Texas, and Arizona State.
+
+4. Chemical Engineering (CHE)
+
+University of Florida hosts 24 CHE students.
+University of Cincinnati takes 21.
+Georgia Tech hosts 7 CHE students.
+Colorado and North Texas each host a small number (3–4) of CHE majors.
+
+5. Petroleum Engineering (PETE)
+
+Colorado School of Mines is the primary PETE destination with 34 students.
+University of Florida hosts 8 PETE students.
+Georgia Tech and Cincinnati each take a handful (2–4) of PETE majors.
 
 The lighter cells across many universities and majors show a long tail of smaller exchanges, indicating a broad but shallow spread beyond the core programs.
 
