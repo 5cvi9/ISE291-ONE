@@ -86,6 +86,27 @@ University of North Texas and University of Cincinnati round out the top five wi
     ax2.set_xlabel("Number of Students")
     st.pyplot(fig2)
 
+
+    st.subheader("Heatmap: Top 7 Universities vs. Majors")
+    st.markdown("""
+    
+    This heatmap shows how the top seven host institutions distribute students across all majors.
+
+- Colorado School of Mines not only hosts the most students overall but also sends sizable groups in ME, ISE, and MGT.
+
+- Georgia Tech has the highest single-major concentration—45 Mechanical Engineering (ME) students—highlighting its strength in that field.
+
+- University of Florida is strong in CS (24 students) and ISE (34 students).
+
+The lighter cells across many universities and majors show a long tail of smaller exchanges, indicating a broad but shallow spread beyond the core programs.
+
+(All counts sum to the same 700-student sample.)
+""")
+    
+
+
+    
+
     # 3. GPA by Sponsor (Box Plot Top 7)
     st.subheader("GPA Distribution by Sponsor (Top 7)")
     top_sponsors = df['Sponsor Name'].value_counts().head(7).index
