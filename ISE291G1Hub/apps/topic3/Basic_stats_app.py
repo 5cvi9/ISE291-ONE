@@ -302,12 +302,7 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     sns.histplot(df['Total Completed Hours'], bins=20, kde=True, ax=ax8)
     st.pyplot(fig8)
 
-    # 10. Count of Students per Major (Top 10)
-    st.subheader("Count of Students per Major (Top 10)")
-    fig9, ax9 = plt.subplots(figsize=(10, 5))
-    sns.countplot(x='Major', data=df[df['Major'].isin(top10_majors)], ax=ax9)
-    ax9.set_xticklabels(ax9.get_xticklabels(), rotation=45, ha='right')
-    st.pyplot(fig9)
+   
 
 
 
