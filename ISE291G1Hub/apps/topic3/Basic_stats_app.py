@@ -249,6 +249,53 @@ Self-funded and Ministry of Education categories can have wider ranges and lower
     ax7.set_xticklabels(ax7.get_xticklabels(), rotation=45, ha='right')
     st.pyplot(fig7)
 
+
+
+    st.subheader("Heatmap: Top 7 Universities vs. Majors")
+    st.markdown("""
+    Below are the median GPA values for each of the top 10 majors (in order of descending popularity), based on our 700-student sample. The median is the “middle” score — half of students in that major scored above it and half below:
+
+1- Mechanical Engineering (ME)
+Median GPA ≈ 3.45
+Most ME students cluster between roughly 3.3 and 3.6, with the central line right around 3.45.
+
+2- Electrical Engineering (EE)
+Median GPA ≈ 3.45
+Very similar to ME, reflecting a strong, consistent performance in EE.
+
+3- Industrial & Systems Engineering (ISE)
+Median GPA ≈ 3.00
+Noticeably lower median than most majors; ISE GPAs spread from about 2.8 up to 3.4.
+
+4- Chemical Engineering (CHE)
+Median GPA ≈ 3.30
+CHE sits in the mid-3’s, with most students between 3.0 and 3.6.
+
+5- Petroleum Engineering (PETE)
+Median GPA ≈ 3.35
+Very similar to CHE, reflecting a tight cluster around the lower mid-3’s.
+
+6- Software Engineering (SWE)
+Median GPA ≈ 3.35
+Also around the mid-3’s, but with a slightly wider spread down toward the high-2’s.
+
+7- Financial Engineering (FIN)
+Median GPA ≈ 3.60
+One of the highest medians — FIN students tend to sit solidly in the upper-3’s.
+
+8- Computer Science (CS)
+Median GPA ≈ 3.60
+On a par with FIN, indicating strong performance in CS.
+
+9- Aerospace Engineering (AME)
+Median GPA ≈ 3.30
+Similar to CHE/PETE/SWE, but with a slightly narrower interquartile range.
+
+10- Architectural Engineering (ARC)
+Median GPA ≈ 3.75
+The highest median of all ten majors, suggesting ARC students generally achieve the top GPAs in our sample.
+""")
+
     # 9. Distribution of Completed Hours
     st.subheader("Total Completed Hours Distribution")
     fig8, ax8 = plt.subplots(figsize=(8, 4))
