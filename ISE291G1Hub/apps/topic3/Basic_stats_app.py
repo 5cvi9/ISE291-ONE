@@ -222,17 +222,7 @@ Self-funded and Ministry of Education categories can have wider ranges and lower
 
     
 
-    # 5. Correlation Heatmap of Numerical Features
-    st.subheader("Correlation Heatmap of Numerical Features")
-    num_cols = df[['GPA', 'Total Completed Hours', 'IELTS/TOEFL Score']]
-    fig5, ax5 = plt.subplots(figsize=(6, 5))
-    sns.heatmap(num_cols.corr(), annot=True, cmap='coolwarm', ax=ax5)
-    st.pyplot(fig5)
-
-    # 6. Tagging Test Type
-    st.subheader("Tag Test Type: IELTS vs TOEFL")
-    df['Test Type'] = df['IELTS/TOEFL Score'].apply(lambda x: 'IELTS' if x <= 9.5 else 'TOEFL')
-    st.write(df['Test Type'].value_counts())
+ 
 
     # 7. GPA Distribution by Major (Top 10) - Box Plot
     st.subheader("GPA Distribution by Major (Top 10)")
@@ -295,6 +285,7 @@ Similar to CHE/PETE/SWE, but with a slightly narrower interquartile range.
 Median GPA ≈ 3.75
 The highest median of all ten majors, suggesting ARC students generally achieve the top GPAs in our sample.
 """)
+    
 
     # 9. Distribution of Completed Hours
     st.subheader("Total Completed Hours Distribution")
@@ -307,11 +298,17 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     - A secondary bump appears around 65–75 hours, representing upper-class students who went later in their studies.
     - The long tail to the right suggests a smaller group of very senior students (75–85 hours) who also participated.
     """)
+    # 7. Tag Test Type: IELTS vs TOEFL
+    st.subheader("Tag Test Type: IELTS vs TOEFL")
+    st.write("Automatically categorize each score as IELTS or TOEFL based on a threshold.")
+    df['Test Type'] = df['IELTS/TOEFL Score'].apply(lambda x: 'IELTS' if x <= 9.5 else 'TOEFL')
+    st.write(df['Test Type'].value_counts())
 
-   
-
-
-
-  
+# 8. Score Distribution by Test Type
+    st.subheader("Score Distribution by Test Type")
+    st.write("Box plots comparing IELTS vs TOEFL score distributions.")
+    fig_score, ax_score = plt.subplots()
+    sns.boxplot(data=df, x='Test Type', y='IELTS/TOEFL Score', ax=ax_score)
+    st.pyplot(fig_score)
 
  
