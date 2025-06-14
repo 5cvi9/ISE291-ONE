@@ -54,6 +54,20 @@ if uploaded:
     ax10.set_ylabel('Count')
     st.pyplot(fig10)
 
+    st.subheader("Context")
+    st.markdown("""
+    
+   We drew a random sample of 700 exchange students from various enrolment years to understand the distribution of host universities. All percentages and counts below refer to this cohort.
+
+Colorado School of Mines hosted the largest share, roughly 29% of our sample (≈ 203 students).
+University of Florida follows with about 22% (≈ 155 students).
+Georgia Tech accounts for 21% (≈ 147 students).
+University of North Texas and University of Cincinnati round out the top five with 15% (≈ 105) and 13% (≈ 91) respectively.
+
+-Together, these five institutions represent the vast majority of placements, with Colorado School of Mines being the top university attended by students.
+""")
+    
+
     # 13. Heatmap: Top 7 Universities vs Majors
     st.subheader("Heatmap of Top 7 Universities vs Majors")
     filt = df[df['Name of Host University'].isin(top7.index)]
@@ -62,7 +76,7 @@ if uploaded:
     sns.heatmap(mat, annot=True, fmt='d', cmap='YlGnBu', linewidths=.5, ax=ax11)
     st.pyplot(fig11)
 
-    st.subheader("Context")
+  
 
     # 2. Top 10 Majors (Bar Chart)
     st.subheader("Top 10 Majors")
