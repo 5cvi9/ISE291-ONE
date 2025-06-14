@@ -10,7 +10,8 @@ st.markdown("""
 
 We took a sample of students from various years—about 700 in total—to get a simple overview of how the exchange program works.
 
-This application visualizes data from our university's exchange program. Below, you'll find interactive charts that help you understand:
+This application visualizes data from the KFUPM exchange program.
+Below, you’ll find interactive charts that help you understand:
 
 - **Top 5 Host Universities**: Which universities hosted the most students.
 - **Top Majors**
