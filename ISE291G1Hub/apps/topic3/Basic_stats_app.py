@@ -39,6 +39,8 @@ if uploaded:
 
 
     df['Sponsor Name'] = df['Sponsor Name'].replace({'Fully Sponsored by KFUPM': 'Fully KFUPM'})
+    df['Sponsor Name'] = df['Sponsor Name'].replace({'KFUPM-Partial Sponsor': 'Partialy KFUPM'})
+
 
     # 1. Top 5 Host Universities (Pie Chart)
     st.subheader("Top 5 Host Universities")
