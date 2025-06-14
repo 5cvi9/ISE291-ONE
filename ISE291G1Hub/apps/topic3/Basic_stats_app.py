@@ -35,7 +35,7 @@ if uploaded:
         df = pd.read_csv(uploaded)
 
     st.subheader("Raw Data Preview")
-    st.dataframe(df.head())
+    st.dataframe(df.sample())
 
     # 1. Top 5 Host Universities (Pie Chart)
     st.subheader("Top 5 Host Universities")
