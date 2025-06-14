@@ -200,6 +200,24 @@ PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
         ax_box.set_title(f'GPA Boxplot – {sponsor}')
         st.pyplot(fig_box)
 
+
+        st.subheader("Heatmap: Top 7 Universities vs. Majors")
+        st.markdown("""
+        We compare the GPA profiles of students across our seven most-common sponsorship categories
+
+        From the visualizations you’ll notice:
+
+Fully KFUPM students tend to have higher GPAs overall (median around 3.7–3.8) with fewer low-end scores.
+
+KFUPM Fund shows a slightly lower median (around 3.3–3.4) and a wider spread, indicating more variability.
+
+Sponsors like SAUDI ARAMCO and SABIC also show high median GPAs (3.7–3.9).
+
+Self-funded and Ministry of Education categories can have wider ranges and lower minimums, suggesting a broader mix of academic performance.
+
+
+
+
     
 
     # 5. Correlation Heatmap of Numerical Features
