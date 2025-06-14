@@ -35,7 +35,7 @@ if uploaded:
         df = pd.read_csv(uploaded)
 
     st.subheader("Raw Data Preview")
-    st.dataframe(df.sample())
+    st.dataframe(df.sample(5))
 
     # 1. Top 5 Host Universities (Pie Chart)
     st.subheader("Top 5 Host Universities")
@@ -43,6 +43,24 @@ if uploaded:
     fig1, ax1 = plt.subplots(figsize=(6, 6))
     ax1.pie(top_unis, labels=top_unis.index, autopct='%1.1f%%', startangle=140)
     st.pyplot(fig1)
+
+    # 12. Top 7 Host Universities (Table & Bar)
+    st.subheader("Top 7 Host Universities")
+    top7 = df['Name of Host University'].value_counts().head(7)
+    st.table(top7.to_frame('Count'))
+    fig10, ax10 = plt.subplots()
+    top7.plot(kind='bar', ax=ax10)
+    ax10.set_xlabel('University')
+    ax10.set_ylabel('Count')
+    st.pyplot(fig10)
+
+    # 13. Heatmap: Top 7 Universities vs Majors
+    st.subheader("Heatmap of Top 7 Universities vs Majors")
+    filt = df[df['Name of Host University'].isin(top7.index)]
+    mat = filt.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
+    fig11, ax11 = plt.subplots(figsize=(12, 6))
+    sns.heatmap(mat, annot=True, fmt='d', cmap='YlGnBu', linewidths=.5, ax=ax11)
+    st.pyplot(fig11)
 
     # 2. Top 10 Majors (Bar Chart)
     st.subheader("Top 10 Majors")
@@ -118,23 +136,7 @@ if uploaded:
         ax.set_title(f'Histogram of {col}')
         st.pyplot(fig)
 
-    # 12. Top 7 Host Universities (Table & Bar)
-    st.subheader("Top 7 Host Universities")
-    top7 = df['Name of Host University'].value_counts().head(7)
-    st.table(top7.to_frame('Count'))
-    fig10, ax10 = plt.subplots()
-    top7.plot(kind='bar', ax=ax10)
-    ax10.set_xlabel('University')
-    ax10.set_ylabel('Count')
-    st.pyplot(fig10)
-
-    # 13. Heatmap: Top 7 Universities vs Majors
-    st.subheader("Heatmap of Top 7 Universities vs Majors")
-    filt = df[df['Name of Host University'].isin(top7.index)]
-    mat = filt.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
-    fig11, ax11 = plt.subplots(figsize=(12, 6))
-    sns.heatmap(mat, annot=True, fmt='d', cmap='YlGnBu', linewidths=.5, ax=ax11)
-    st.pyplot(fig11)
+  
 
     # 14. GPA by Sponsor: Fully vs Partially KFUPM
     st.subheader("GPA Distributions by Sponsor (KFUPM)")
