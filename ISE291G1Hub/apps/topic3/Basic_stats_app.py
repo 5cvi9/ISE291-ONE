@@ -215,6 +215,8 @@ Sponsors like SAUDI ARAMCO and SABIC also show high median GPAs (3.7–3.9).
 
 Self-funded and Ministry of Education categories can have wider ranges and lower minimums, suggesting a broader mix of academic performance.
 
+""")
+
 
 
 
