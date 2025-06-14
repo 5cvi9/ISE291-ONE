@@ -309,13 +309,7 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     ax9.set_xticklabels(ax9.get_xticklabels(), rotation=45, ha='right')
     st.pyplot(fig9)
 
-    # 11. Histograms of All Numeric Columns
-    st.subheader("Histograms of Numeric Columns")
-    for col in df.select_dtypes(include='number').columns:
-        fig, ax = plt.subplots()
-        sns.histplot(df[col], bins=10, ax=ax)
-        ax.set_title(f'Histogram of {col}')
-        st.pyplot(fig)
+
 
   
 
