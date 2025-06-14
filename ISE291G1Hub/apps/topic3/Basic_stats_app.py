@@ -315,5 +315,19 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
       ax_score.set_ylabel('Score')
       st.pyplot(fig_score)
 
+    st.subheader("IELTS Score Distribution")
+    st.markdown("""
+        - Median ≈ 7.0: Half of our IELTS students scored above 7.0 and half below.
+        - IQR ~ 6.8–7.5: 50% of scores lie in this band, showing a tight clustering around the mid-7’s.
+        - Range ~ 6.0–8.5: Most scores fall within these whiskers, with a few high-end outliers touching 8.5.
+        
+    """)
+
+
+      
+    
+
+    
+
 
  
