@@ -300,14 +300,13 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     """)
     # 7. Tag Test Type: IELTS vs TOEFL
     st.subheader("Tag Test Type: IELTS vs TOEFL")
-    st.write("Automatically categorize each score as IELTS or TOEFL based on a threshold.")
     df['Test Type'] = df['IELTS/TOEFL Score'].apply(lambda x: 'IELTS' if x <= 9.5 else 'TOEFL')
     st.write(df['Test Type'].value_counts())
 
 # 8. Score Distribution by Test Type
     # 8. Score Distribution by Test Type
     st.subheader("Score Distribution by Test Type")
-    st.write("Separate box plots for IELTS and TOEFL score distributions.")
+   
     for ttype in ['IELTS','TOEFL']:
       fig_score, ax_score = plt.subplots()
       subset = df[df['Test Type'] == ttype]['IELTS/TOEFL Score']
