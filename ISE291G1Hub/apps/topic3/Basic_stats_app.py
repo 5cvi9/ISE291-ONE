@@ -1,83 +1,133 @@
 import streamlit as st
-
-import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from io import StringIO
 
-# Set up the app
-st.title("Basic Stats App")
-st.write("Upload your dataset and perform basic statistical analysis.")
+# Set style
+sns.set(style="whitegrid")
+
+st.title("Exchange Program Data Analysis")
 
 # File uploader
-uploaded_file = st.file_uploader("Upload your dataset (CSV format)", type=["csv"])
+uploaded = st.file_uploader("Upload your dataset (Excel or CSV)", type=["xlsx", "xls", "csv"])
+if uploaded:
+    # Load data
+    if uploaded.name.endswith(("xlsx", "xls")):
+        df = pd.read_excel(uploaded)
+    else:
+        df = pd.read_csv(uploaded)
 
-if uploaded_file:
-    # Read the uploaded file into a DataFrame
-    try:
-        df = pd.read_csv(uploaded_file)
-        st.write("Here's a preview of your dataset:")
-        st.dataframe(df)
+    st.subheader("Raw Data Preview")
+    st.dataframe(df.head())
 
-        # Allow the user to select a column
-        column = st.selectbox("Select a column to analyze:", df.columns)
+    # 1. Top 5 Host Universities (Pie Chart)
+    st.subheader("Top 5 Host Universities")
+    top_unis = df['Name of Host University'].value_counts().head(5)
+    fig1, ax1 = plt.subplots(figsize=(6, 6))
+    ax1.pie(top_unis, labels=top_unis.index, autopct='%1.1f%%', startangle=140)
+    st.pyplot(fig1)
 
-        # Check the column type
-        if df[column].dtype == "object":
-            st.write(f"Column '{column}' is categorical.")
-            
-            # Categorical Histogram
-            st.write("### Categorical Histogram")
-            fig, ax = plt.subplots()
-            df[column].value_counts().plot(kind="bar", ax=ax)
-            ax.set_title(f"Histogram of {column}")
-            ax.set_xlabel(column)
-            ax.set_ylabel("Count")
-            st.pyplot(fig)
+    # 2. Top 10 Majors (Bar Chart)
+    st.subheader("Top 10 Majors")
+    top_majors = df['Major'].value_counts().head(10)
+    fig2, ax2 = plt.subplots(figsize=(8, 4))
+    sns.barplot(x=top_majors.values, y=top_majors.index, ax=ax2)
+    ax2.set_xlabel("Number of Students")
+    st.pyplot(fig2)
 
-            # Pie chart
-            st.write("### Pie Chart")
-            fig, ax = plt.subplots()
-            df[column].value_counts().plot(kind="pie", autopct='%1.1f%%', ax=ax)
-            ax.set_ylabel("")
-            ax.set_title(f"Pie Chart of {column}")
-            st.pyplot(fig)
+    # 3. GPA by Sponsor (Box Plot Top 7)
+    st.subheader("GPA Distribution by Sponsor (Top 7)")
+    top_sponsors = df['Sponsor Name'].value_counts().head(7).index
+    fig3, ax3 = plt.subplots(figsize=(10, 6))
+    sns.boxplot(data=df[df['Sponsor Name'].isin(top_sponsors)], x='Sponsor Name', y='GPA', ax=ax3)
+    ax3.set_xticklabels(ax3.get_xticklabels(), rotation=45, ha='right')
+    st.pyplot(fig3)
 
-            # Categorical Summary
-            st.write("### Summary Statistics for Categorical Data")
-            st.write(df[column].value_counts())
+    # 4. Top 5 Universities vs Top 5 Majors (Clustered Bar)
+    st.subheader("Top 5 Universities vs Top 5 Majors")
+    top5_unis = df['Name of Host University'].value_counts().head(5).index
+    top5_majors = df['Major'].value_counts().head(5).index
+    cluster_df = df[df['Name of Host University'].isin(top5_unis) & df['Major'].isin(top5_majors)]
+    data = cluster_df.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
+    fig4 = data.plot(kind='bar', figsize=(10, 6)).get_figure()
+    plt.xticks(rotation=45, ha='right')
+    st.pyplot(fig4)
 
-        else:
-            st.write(f"Column '{column}' is numerical.")
+    # 5. Correlation Heatmap of Numerical Features
+    st.subheader("Correlation Heatmap of Numerical Features")
+    num_cols = df[['GPA', 'Total Completed Hours', 'IELTS/TOEFL Score']]
+    fig5, ax5 = plt.subplots(figsize=(6, 5))
+    sns.heatmap(num_cols.corr(), annot=True, cmap='coolwarm', ax=ax5)
+    st.pyplot(fig5)
 
-            # Numerical Histogram
-            st.write("### Numerical Histogram")
-            bins = st.slider("Select number of bins for the histogram:", min_value=5, max_value=50, value=10)
-            fig, ax = plt.subplots()
-            df[column].plot(kind="hist", bins=bins, ax=ax)
-            ax.set_title(f"Histogram of {column}")
-            ax.set_xlabel(column)
-            ax.set_ylabel("Frequency")
-            st.pyplot(fig)
+    # 6. Tagging Test Type
+    st.subheader("Tag Test Type: IELTS vs TOEFL")
+    df['Test Type'] = df['IELTS/TOEFL Score'].apply(lambda x: 'IELTS' if x <= 9.5 else 'TOEFL')
+    st.write(df['Test Type'].value_counts())
 
-            # Summary Statistics
-            st.write("### Summary Statistics for Numerical Data")
-            st.write(f"Mean: {df[column].mean():.2f}")
-            st.write(f"Median: {df[column].median():.2f}")
-            st.write(f"Mode: {df[column].mode()[0]:.2f}")
-            st.write(f"Standard Deviation: {df[column].std():.2f}")
-            st.write(f"Minimum: {df[column].min():.2f}")
-            st.write(f"Maximum: {df[column].max():.2f}")
+    # 7. GPA Distribution by Major (Top 10) - Box Plot
+    st.subheader("GPA Distribution by Major (Top 10)")
+    top10_majors = df['Major'].value_counts().head(10).index
+    fig6, ax6 = plt.subplots(figsize=(12, 5))
+    sns.boxplot(data=df[df['Major'].isin(top10_majors)], x='Major', y='GPA', ax=ax6)
+    ax6.set_xticklabels(ax6.get_xticklabels(), rotation=45, ha='right')
+    st.pyplot(fig6)
 
-            # Box Plot
-            st.write("### Box Plot")
-            fig, ax = plt.subplots()
-            sns.boxplot(y=df[column], ax=ax)
-            ax.set_title(f"Box Plot of {column}")
-            st.pyplot(fig)
+    # 8. GPA Violin Plot by Major (Top 10)
+    st.subheader("GPA Violin Plot by Major (Top 10)")
+    fig7, ax7 = plt.subplots(figsize=(12, 5))
+    sns.violinplot(data=df[df['Major'].isin(top10_majors)], x='Major', y='GPA', ax=ax7)
+    ax7.set_xticklabels(ax7.get_xticklabels(), rotation=45, ha='right')
+    st.pyplot(fig7)
 
-    except Exception as e:
-        st.error(f"Error loading file: {e}")
-else:
-    st.write("Please upload a CSV file to proceed.")
+    # 9. Distribution of Completed Hours
+    st.subheader("Total Completed Hours Distribution")
+    fig8, ax8 = plt.subplots(figsize=(8, 4))
+    sns.histplot(df['Total Completed Hours'], bins=20, kde=True, ax=ax8)
+    st.pyplot(fig8)
+
+    # 10. Count of Students per Major (Top 10)
+    st.subheader("Count of Students per Major (Top 10)")
+    fig9, ax9 = plt.subplots(figsize=(10, 5))
+    sns.countplot(x='Major', data=df[df['Major'].isin(top10_majors)], ax=ax9)
+    ax9.set_xticklabels(ax9.get_xticklabels(), rotation=45, ha='right')
+    st.pyplot(fig9)
+
+    # 11. Histograms of All Numeric Columns
+    st.subheader("Histograms of Numeric Columns")
+    for col in df.select_dtypes(include='number').columns:
+        fig, ax = plt.subplots()
+        sns.histplot(df[col], bins=10, ax=ax)
+        ax.set_title(f'Histogram of {col}')
+        st.pyplot(fig)
+
+    # 12. Top 7 Host Universities (Table & Bar)
+    st.subheader("Top 7 Host Universities")
+    top7 = df['Name of Host University'].value_counts().head(7)
+    st.table(top7.to_frame('Count'))
+    fig10, ax10 = plt.subplots()
+    top7.plot(kind='bar', ax=ax10)
+    ax10.set_xlabel('University')
+    ax10.set_ylabel('Count')
+    st.pyplot(fig10)
+
+    # 13. Heatmap: Top 7 Universities vs Majors
+    st.subheader("Heatmap of Top 7 Universities vs Majors")
+    filt = df[df['Name of Host University'].isin(top7.index)]
+    mat = filt.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
+    fig11, ax11 = plt.subplots(figsize=(12, 6))
+    sns.heatmap(mat, annot=True, fmt='d', cmap='YlGnBu', linewidths=.5, ax=ax11)
+    st.pyplot(fig11)
+
+    # 14. GPA by Sponsor: Fully vs Partially KFUPM
+    st.subheader("GPA Distributions by Sponsor (KFUPM)")
+    for sponsor in ['Fully KFUPM', 'Partialy KFUPM']:
+        sub = df[df['Sponsor Name'] == sponsor]
+        fig_hist, ax_hist = plt.subplots()
+        sns.histplot(sub['GPA'], bins=15, kde=True, ax=ax_hist)
+        ax_hist.set_title(f'GPA Histogram – {sponsor}')
+        st.pyplot(fig_hist)
+        fig_box, ax_box = plt.subplots()
+        sns.boxplot(y=sub['GPA'], ax=ax_box)
+        ax_box.set_title(f'GPA Boxplot – {sponsor}')
+        st.pyplot(fig_box)
