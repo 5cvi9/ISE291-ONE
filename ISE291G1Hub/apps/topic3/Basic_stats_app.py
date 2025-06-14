@@ -322,6 +322,15 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
         - Range ~ 6.0–8.5: Most scores fall within these whiskers, with a few high-end outliers touching 8.5.
         
     """)
+    st.subheader("TOEFL Score Distribution")
+    st.markdown("""
+     
+        - Median ≈ 78: The middle TOEFL score is around 78.
+        - IQR ~ 72–87: 50% of TOEFL scores span this 15-point window
+        - Range ~ 61–107: Whiskers cover most scores; multiple outliers above 110 show some students achieve exceptionally high results.
+        
+    """)
+
 
 
       
