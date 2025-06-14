@@ -37,6 +37,9 @@ if uploaded:
     st.subheader("Raw Data Preview")
     st.dataframe(df.sample(5))
 
+
+    df['Sponsor Name'] = df['Sponsor Name'].replace({'Fully Sponsored by KFUPM': 'Fully KFUPM'})
+
     # 1. Top 5 Host Universities (Pie Chart)
     st.subheader("Top 5 Host Universities")
     top_unis = df['Name of Host University'].value_counts().head(5)
