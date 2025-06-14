@@ -62,6 +62,8 @@ if uploaded:
     sns.heatmap(mat, annot=True, fmt='d', cmap='YlGnBu', linewidths=.5, ax=ax11)
     st.pyplot(fig11)
 
+     st.subheader("Context")
+
     # 2. Top 10 Majors (Bar Chart)
     st.subheader("Top 10 Majors")
     top_majors = df['Major'].value_counts().head(10)
