@@ -301,6 +301,12 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     fig8, ax8 = plt.subplots(figsize=(8, 4))
     sns.histplot(df['Total Completed Hours'], bins=20, kde=True, ax=ax8)
     st.pyplot(fig8)
+    st.subheader("Total Completed Hours Distribution")
+    st.markdown("""
+    - The bulk of students have completed 30–45 hours, with a clear peak around 36–40 hours—likely those in early junior year.
+    - A secondary bump appears around 65–75 hours, representing upper-class students who went later in their studies.
+    - The long tail to the right suggests a smaller group of very senior students (75–85 hours) who also participated.
+    """)
 
    
 
