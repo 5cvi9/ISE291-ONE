@@ -201,7 +201,7 @@ PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
         st.pyplot(fig_box)
 
 
-        st.subheader("Heatmap: Top 7 Universities vs. Majors")
+        st.subheader("GPA vs. Sponsor")
         st.markdown("""
         We compare the GPA profiles of students across our seven most-common sponsorship categories
 
@@ -251,7 +251,7 @@ Self-funded and Ministry of Education categories can have wider ranges and lower
 
 
 
-    st.subheader("Heatmap: Top 7 Universities vs. Majors")
+    st.subheader("GPA vs. Majors")
     st.markdown("""
     Below are the median GPA values for each of the top 10 majors (in order of descending popularity), based on our 700-student sample. The median is the “middle” score — half of students in that major scored above it and half below:
 
@@ -303,7 +303,7 @@ The highest median of all ten majors, suggesting ARC students generally achieve 
     st.pyplot(fig8)
     st.subheader("Total Completed Hours Distribution")
     st.markdown("""
-    - The bulk of students have completed 30–45 hours, with a clear peak around 36–40 hours—likely those in early junior year.
+    - The bulk of students have completed 30–45 hours, with a clear peak around 36–40 hours.
     - A secondary bump appears around 65–75 hours, representing upper-class students who went later in their studies.
     - The long tail to the right suggests a smaller group of very senior students (75–85 hours) who also participated.
     """)
