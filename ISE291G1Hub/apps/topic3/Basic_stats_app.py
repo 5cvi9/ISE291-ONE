@@ -130,6 +130,45 @@ The lighter cells across many universities and majors show a long tail of smalle
 
 (All counts sum to the same 700-student sample.)
 """)
+
+
+
+    # 4. Top 5 Universities vs Top 5 Majors (Clustered Bar)
+    st.subheader("Top 5 Universities vs Top 5 Majors")
+    top5_unis = df['Name of Host University'].value_counts().head(5).index
+    top5_majors = df['Major'].value_counts().head(5).index
+    cluster_df = df[df['Name of Host University'].isin(top5_unis) & df['Major'].isin(top5_majors)]
+    data = cluster_df.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
+    fig4 = data.plot(kind='bar', figsize=(10, 6)).get_figure()
+    plt.xticks(rotation=45, ha='right')
+    st.pyplot(fig4)
+    
+    st.markdown("""
+
+This clustered bar chart compares the distribution of students in the five most popular majors—CHE, EE, ISE, ME, and PETE—across our top five host institutions:
+
+- Colorado School of Mines
+Strong in ME (40 students) and PETE (34), reflecting its well-known engineering and petroleum programs.
+Also hosts 27 EE and 11 CHE students, with a smaller presence in ISE.
+
+- Georgia Tech
+Dominates EE with 45 students, showcasing its leading electrical engineering department.
+Welcomes 16 ME and 7 CHE students, but very few in ISE and PETE.
+
+- University of Cincinnati
+Attracts 21 CHE students and 11 ME, with a modest number (6) of EE students and very few PETE or ISE.
+
+- University of Florida
+Has a balanced spread but is strongest in ISE (34) and ME (24), underlining its interdisciplinary engineering strengths.
+Also hosts 14 CHE and 8 EE students, with minimal PETE representation.
+
+- University of North Texas
+Draws 21 ME students and 6 EE students.
+PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
+""")
+
+
+    
     
 
 
@@ -143,15 +182,7 @@ The lighter cells across many universities and majors show a long tail of smalle
     ax3.set_xticklabels(ax3.get_xticklabels(), rotation=45, ha='right')
     st.pyplot(fig3)
 
-    # 4. Top 5 Universities vs Top 5 Majors (Clustered Bar)
-    st.subheader("Top 5 Universities vs Top 5 Majors")
-    top5_unis = df['Name of Host University'].value_counts().head(5).index
-    top5_majors = df['Major'].value_counts().head(5).index
-    cluster_df = df[df['Name of Host University'].isin(top5_unis) & df['Major'].isin(top5_majors)]
-    data = cluster_df.groupby(['Name of Host University', 'Major']).size().unstack(fill_value=0)
-    fig4 = data.plot(kind='bar', figsize=(10, 6)).get_figure()
-    plt.xticks(rotation=45, ha='right')
-    st.pyplot(fig4)
+    
 
     # 5. Correlation Heatmap of Numerical Features
     st.subheader("Correlation Heatmap of Numerical Features")
