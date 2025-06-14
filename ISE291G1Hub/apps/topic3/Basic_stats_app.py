@@ -182,6 +182,19 @@ PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
     ax3.set_xticklabels(ax3.get_xticklabels(), rotation=45, ha='right')
     st.pyplot(fig3)
 
+    # 14. GPA by Sponsor: Fully vs Partially KFUPM
+    st.subheader("GPA Distributions by Sponsor (KFUPM)")
+    for sponsor in ['Fully KFUPM', 'Partialy KFUPM']:
+        sub = df[df['Sponsor Name'] == sponsor]
+        fig_hist, ax_hist = plt.subplots()
+        sns.histplot(sub['GPA'], bins=15, kde=True, ax=ax_hist)
+        ax_hist.set_title(f'GPA Histogram – {sponsor}')
+        st.pyplot(fig_hist)
+        fig_box, ax_box = plt.subplots()
+        sns.boxplot(y=sub['GPA'], ax=ax_box)
+        ax_box.set_title(f'GPA Boxplot – {sponsor}')
+        st.pyplot(fig_box)
+
     
 
     # 5. Correlation Heatmap of Numerical Features
@@ -234,15 +247,4 @@ PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
 
   
 
-    # 14. GPA by Sponsor: Fully vs Partially KFUPM
-    st.subheader("GPA Distributions by Sponsor (KFUPM)")
-    for sponsor in ['Fully KFUPM', 'Partialy KFUPM']:
-        sub = df[df['Sponsor Name'] == sponsor]
-        fig_hist, ax_hist = plt.subplots()
-        sns.histplot(sub['GPA'], bins=15, kde=True, ax=ax_hist)
-        ax_hist.set_title(f'GPA Histogram – {sponsor}')
-        st.pyplot(fig_hist)
-        fig_box, ax_box = plt.subplots()
-        sns.boxplot(y=sub['GPA'], ax=ax_box)
-        ax_box.set_title(f'GPA Boxplot – {sponsor}')
-        st.pyplot(fig_box)
+ 
