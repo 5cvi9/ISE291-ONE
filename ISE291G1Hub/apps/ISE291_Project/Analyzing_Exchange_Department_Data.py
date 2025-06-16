@@ -248,15 +248,15 @@ Median GPA ≈ 3.00
 Noticeably lower median than most majors; ISE GPAs spread from about 2.8 up to 3.4.
 
 4- Chemical Engineering (CHE)
-Median GPA ≈ 3.30
+Median GPA ≈ 3.45
 CHE sits in the mid-3’s, with most students between 3.0 and 3.6.
 
 5- Petroleum Engineering (PETE)
-Median GPA ≈ 3.35
+Median GPA ≈ 3.60
 Very similar to CHE, reflecting a tight cluster around the lower mid-3’s.
 
 6- Software Engineering (SWE)
-Median GPA ≈ 3.35
+Median GPA ≈ 3.40
 Also around the mid-3’s, but with a slightly wider spread down toward the high-2’s.
 
 7- Financial Engineering (FIN)
