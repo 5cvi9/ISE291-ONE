@@ -9,9 +9,7 @@ st.markdown("Welcome GROUP1.")
 BASE_DIR = os.path.dirname(__file__)
 APPS_DIR = os.path.join(BASE_DIR, "apps")
 
-# 2) (Optional) Debug what you’re actually scanning:
-st.write("Scanning apps in:", APPS_DIR)
-st.write(os.listdir(APPS_DIR))
+
 
 # Sidebar
 st.sidebar.title("Navigation")
