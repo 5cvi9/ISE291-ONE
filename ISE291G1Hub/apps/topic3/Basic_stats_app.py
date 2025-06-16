@@ -208,17 +208,26 @@ Self-funded and Ministry of Education categories can have wider ranges and lower
 
 """)
 # 7. GPA Distribution by Major (Top 10) - Box & Violin
+top10_majors = df['Major'].value_counts().head(10).index
+
 st.subheader("GPA Distribution by Major (Top 10)")
 fig6, ax6 = plt.subplots(figsize=(12, 5))
-sns.boxplot(data=df[df['Major'].isin(top_majors)], x='Major', y='GPA', ax=ax6)
+sns.boxplot(
+    data=df[df['Major'].isin(top10_majors)],
+    x='Major', y='GPA', ax=ax6
+)
 ax6.set_xticklabels(ax6.get_xticklabels(), rotation=45, ha='right')
 st.pyplot(fig6)
 
 st.subheader("GPA Violin Plot by Major (Top 10)")
 fig7, ax7 = plt.subplots(figsize=(12, 5))
-sns.violinplot(data=df[df['Major'].isin(top_majors)], x='Major', y='GPA', ax=ax7)
+sns.violinplot(
+    data=df[df['Major'].isin(top10_majors)],
+    x='Major', y='GPA', ax=ax7
+)
 ax7.set_xticklabels(ax7.get_xticklabels(), rotation=45, ha='right')
 st.pyplot(fig7)
+
 st.subheader("GPA vs. Majors")
 st.markdown("""
     Below are the median GPA values for each of the top 10 majors (in order of descending popularity), based on our 700-student sample. The median is the “middle” score — half of students in that major scored above it and half below:
