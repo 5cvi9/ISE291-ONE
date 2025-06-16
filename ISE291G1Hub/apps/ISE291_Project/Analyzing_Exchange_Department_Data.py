@@ -18,7 +18,7 @@ Below, you’ll find interactive charts that help you understand:
 - Top 5 Host Universities: Which universities hosted the most students.
 - Top Majors: The most popular fields of study among exchange participants.
 - GPA Distributions by Sponsor and Major: How student GPAs vary across different sponsors and academic majors.
-- Comparisons Between Universities and Majors: Side-by-side analysis of program sizes and performance across institutions and disciplines.
+- Comparisons Between Universities and Majors.
 - Correlation Among Key Numerical Features: Relationships between metrics like GPA, completed credit hours, and language‐test scores.
 - Performance Comparison (Host vs KFUPM): How students GPAs at their host universities compare to their GPAs at KFUPM.
 """)
@@ -157,22 +157,18 @@ This clustered bar chart compares the distribution of students in the five most 
 
 - Colorado School of Mines
 Strong in ME (40 students) and PETE (34).
-Also hosts 27 EE and 11 CHE students, with a smaller presence in ISE.
 
 - Georgia Tech
 Dominates EE with 45 students, showcasing its leading electrical engineering department.
-Welcomes 16 ME and 7 CHE students, but very few in ISE and PETE.
 
 - University of Cincinnati
-Host 21 CHE students and 11 ME, with (6) of EE students and very few PETE or ISE.
+Host 21 EE students and 11 CHE.
 
 - University of Florida
-Has a balanced spread but is strongest in ISE (34) and ME (24).
-Also hosts 14 CHE and 8 EE students, with minimal PETE representation.
+Has a balanced spread but is strongest in ISE (34) and CHE (24).
 
 - University of North Texas
-Draws 21 ME students and 6 EE students.
-PETE (2)  CHE (1) with almost no ISE placements.
+Host 15 FIN and 21 ME.
 """)
 
 # 3. GPA by Sponsor (Box Plot Top 7)
