@@ -26,13 +26,14 @@ st.title("Exchange Program Data Analysis")
 # Load data directly from Book2.xlsx or Book2.csv
 
 
-# in Basic_stats_app.py
-base = os.path.dirname(__file__)                  # e.g. ".../apps/topic3"
-excel_path = os.path.join(base, 'Book2.xlsx')
-try:
-    df = pd.read_excel(excel_path)
-except FileNotFoundError:
-    df = pd.read_csv(os.path.join(base, 'Book2.csv'))
+def load_dataset():
+    base = os.path.dirname(__file__)
+    excel_path = os.path.join(base, 'Book2.xlsx')
+    csv_path = os.path.join(base, 'Book2.csv')
+    try:
+        return pd.read_excel(excel_path)
+    except FileNotFoundError:
+        return pd.read_csv(csv_path)
 
 
 st.subheader("Raw Data Preview")
