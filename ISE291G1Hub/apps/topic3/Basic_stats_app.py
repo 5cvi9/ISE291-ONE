@@ -330,15 +330,26 @@ st.markdown("""
         - Range ~ 61–107: Whiskers cover most scores; multiple outliers above 110 show some students achieve exceptionally high results.
         
     """)
-st.subheader("GPA Comparison (Home vs Host)")
+st.subheader("GPA Comparison (KFUPM vs Host)")
 
     # 1. Scatter plot
 fig_scatter, ax_scatter = plt.subplots()
 ax_scatter.scatter(df1['GPA'], df1['Host GPA'])
-ax_scatter.set_title('Home GPA vs Host GPA')
-ax_scatter.set_xlabel('Home GPA')
+ax_scatter.set_title('KFUPM GPA vs Host GPA')
+ax_scatter.set_xlabel('KFUPM GPA')
 ax_scatter.set_ylabel('Host GPA')
 st.pyplot(fig_scatter)
+st.subheader("KFUPM GPA vs. Host GPA (Scatter Plot)")
+st.markdown("""
+     
+        - Each dot represents one student’s KFUPM GPA (x-axis) and their host-university GPA (y-axis).
+        - students’ grades at their host university tend to be a bit lower than at KFUPM.
+        - The overall upward trend confirms that strong performers at KFUPM generally remain strong performers abroad.
+        
+    """)
+
+
+
 
     # 2. Compute difference stats
 df1['GPA Difference'] = df1['GPA'] - df1['Host GPA']
@@ -349,14 +360,42 @@ st.table(diff_stats)
     # 3. Histogram of GPA Difference
 fig_hist, ax_hist = plt.subplots()
 ax_hist.hist(df1['GPA Difference'].dropna(), bins=20)
-ax_hist.set_title('Distribution of GPA Difference (Home – Host)')
+ax_hist.set_title('Distribution of GPA Difference (KFUPM – Host)')
 ax_hist.set_xlabel('GPA Difference')
 ax_hist.set_ylabel('Frequency')
 st.pyplot(fig_hist)
 
+
+st.subheader("Distribution (Histogram)")
+st.markdown("""
+     
+        - Most students’ differences cluster just above zero, confirming a small grade drop abroad for the majority.
+        - A few students actually scored higher abroad (the bars left of zero).
+        - A small number experienced a large drop (bars out toward +2 or +3).
+        
+    """)
+
     # 4. Box plot of GPA Difference
 fig_box, ax_box = plt.subplots()
 ax_box.boxplot(df1['GPA Difference'].dropna(), vert=True, patch_artist=True)
-ax_box.set_title('Box Plot of GPA Difference (Home – Host)')
+ax_box.set_title('Box Plot of GPA Difference (KFUPM – Host)')
 ax_box.set_ylabel('GPA Difference')
 st.pyplot(fig_box)
+
+st.subheader("Box Plot of Differences")
+st.markdown("""
+     
+        - The center line shows the median drop of about 0.37 GPA points.
+        - he box covers the middle 50% of students, whose drops range from 0 up to about 0.84.
+        -The whiskers stretch from roughly –1.2 (host GPA > home) to +2.1, showing most students full range.
+
+        note: Any dots outside those whiskers are rare cases with unusually big changes.
+        
+    """)
+
+st.subheader("OVER ALL")
+st.markdown("""
+     
+        Most students see a small drop in GPA when they go abroad about 0.4 points on average. Half of them lose between 0 and 0.8 points, a few actually improve ,Only a few individuals experience big changes in either direction.
+        
+    """)
