@@ -57,6 +57,8 @@ df['Sponsor Name'] = df['Sponsor Name'].replace({
     'KFUPM-Partial Sponsor':  'Partialy KFUPM'
 })
 
+df["Name of Host University"]=df["Name of Host University"].replace("University of Arizona","Arizona State University")
+
 # 1. Top 5 Host Universities (Pie Chart)
 st.subheader("Top 5 Host Universities")
 top_unis = df['Name of Host University'].value_counts().head(5)
