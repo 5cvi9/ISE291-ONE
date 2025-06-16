@@ -399,7 +399,7 @@ st.subheader("- Adding More Universities")
 st.markdown("""
 Most students tend to enroll in the same five universities: Colorado School of Mines, University of Florida, Georgia Tech, University of North Texas, and University of Cincinnati. These institutions host nearly all students majoring in Mechanical Engineering (ME), Electrical Engineering (EE), Industrial and Systems Engineering (ISE), Chemical Engineering (CHE), and Petroleum Engineering (PETE).
 
-However, other majors, such as Software Engineering, Financial Engineering, Computer Science, and Architectural Engineering, send only a few students to these same five universities. By introducing more partner universities, we can allow a wider range of majors to participate in the exchange program, ensuring that all students find the best academic fit.
+However, other majors, such as Software Engineering, Financial Engineering, Computer Science, and Architectural Engineering, send only a few students to these same five universities. By introducing more partner universities, a wider range of majors can participate in the exchange program, ensuring that all students find the best academic fit.
 """)
 st.subheader("- Early Warning System")
 st.markdown("""Host universities would inform the department if an exchange student's midterm GPA drops below a certain level. In response, the department would take steps like reducing the student's course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
