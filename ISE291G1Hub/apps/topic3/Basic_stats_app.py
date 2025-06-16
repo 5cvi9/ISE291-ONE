@@ -26,16 +26,13 @@ Below, you’ll find interactive charts that help you understand:
 st.title("Exchange Program Data Analysis")
 
 # File uploader
-uploaded = st.file_uploader("Upload your dataset (Excel or CSV)", type=["xlsx", "xls", "csv"])
-if uploaded:
-    # Load data
-    if uploaded.name.endswith(("xlsx", "xls")):
-        df = pd.read_excel(uploaded)
-    else:
-        df = pd.read_csv(uploaded)
+   try:
+        df = pd.read_excel('Book2.xlsx')
+   except FileNotFoundError:
+        df = pd.read_csv('Book2.csv')
 
-    st.subheader("Raw Data Preview")
-    st.dataframe(df.sample(5))
+   st.subheader("Raw Data Preview")
+   st.dataframe(df.sample(5))
 
 
     df['Sponsor Name'] = df['Sponsor Name'].replace({'Fully Sponsored by KFUPM': 'Fully KFUPM'})
