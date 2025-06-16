@@ -24,11 +24,11 @@ Below, you’ll find interactive charts that help you understand:
 
 st.title("Exchange Program Data Analysis")
 
-# Resolve data path relative to this script
 def load_datasets():
-    base = os.path.dirname(__file__)
+    # assume Streamlit is running with cwd at your repo root
+    base = os.path.join(os.getcwd(), "ISE291_Project")
 
-    # -- Book2 (primary) --
+    # Book2
     excel2 = os.path.join(base, 'Book2.xlsx')
     csv2   = os.path.join(base, 'Book2.csv')
     try:
@@ -36,7 +36,7 @@ def load_datasets():
     except FileNotFoundError:
         df2 = pd.read_csv(csv2)
 
-    # -- Book1_GPA (secondary) --
+    # Book1_GPA
     excel1 = os.path.join(base, 'Book1_GPA.xlsx')
     try:
         df1 = pd.read_excel(excel1)
@@ -44,6 +44,7 @@ def load_datasets():
         df1 = None
 
     return df2, df1
+
 
 # Load data
 df, df1 = load_datasets()
