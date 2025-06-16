@@ -2,8 +2,8 @@ import streamlit as st
 import os
 import importlib.util
 
-st.title("ISE 291 Term 242 Section F22 Streamlit Hub")
-st.markdown("Welcome GROUP1.")
+st.title("ISE 291 Term 242 Streamlit Hub")
+st.markdown("")
 
 #Absolute path to the 'apps' folder
 APPS_DIR = "ISE291G1Hub/apps"
