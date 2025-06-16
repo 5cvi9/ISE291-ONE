@@ -111,40 +111,33 @@ st.markdown("""
     This heatmap shows how the top seven host institutions distribute students across all majors.
 
 1. **Mechanical Engineering (ME)**
-   - Georgia Tech: **45** students  
-   - Colorado School of Mines: **40**  
-   - University of Florida: **34**  
-   - Other notable hosts: Arizona State (29), North Texas (21), Arizona (12), Cincinnati (11)
+   
+   - Colorado School of Mines **40** students.
+   - North Texas **21** students.
 
 2. **Electrical Engineering (EE)**
-   - University of Florida: **34**  
-   - Colorado School of Mines: **27**  
-   - University of North Texas: **15**  
-   - Others: Georgia Tech (7), Cincinnati (6), Arizona (2)
+   - University of Cincinnati **21** students.
+   - Georgia Tech: **45** students.     
+
 
 3. **Industrial & Systems Engineering (ISE)**
-   - Colorado School of Mines: **34**  
-   - University of Florida: **24**  
-   - Georgia Tech: **16**  
-   - Runners-up: Cincinnati (6), North Texas (5), Arizona State (0 for this sample)
+   - University of Florida **34** students.  
+   - Arizona State University **29** students.  
+   
 
 4. Chemical Engineering (CHE)**
-   - University of Florida: **24**  
-   - University of Cincinnati: **21**  
-   - Georgia Tech: **7**  
-   - Colorado School of Mines & North Texas: **3–4** each
+   - University of Florida **24** students. 
+   - Colorado School of Mines **27** students.  
+  
 
 5. **Petroleum Engineering (PETE)**
-   - Colorado School of Mines: **34**  
-   - University of Florida: **8**  
-   - Georgia Tech & Cincinnati: **2–4** each  
+   - Colorado School of Mines **34** students.  
+   
 
-> *Note:* The lighter “long tail” cells in your heatmap reflect many smaller programs beyond these core five.  
 
 
 The lighter cells across many universities and majors show a long tail of smaller exchanges, indicating a broad but shallow spread beyond the core programs.
 
-(All counts sum to the same 700-student sample.)
 """)
 
 
