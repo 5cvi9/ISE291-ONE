@@ -20,6 +20,7 @@ Below, you’ll find interactive charts that help you understand:
 - GPA Distributions by Sponsor and Major: How student GPAs vary across different sponsors and academic majors.
 - Comparisons Between Universities and Majors: Side-by-side analysis of program sizes and performance across institutions and disciplines.
 - Correlation Among Key Numerical Features: Relationships between metrics like GPA, completed credit hours, and language‐test scores.
+- Performance Comparison (Host vs KFUPM): How students GPAs at their host universities compare to their GPAs at KFUPM.
 """)
 
 st.title("Exchange Program Data Analysis")
@@ -402,6 +403,6 @@ Most students tend to enroll in the same five universities: Colorado School of M
 However, other majors, such as Software Engineering, Financial Engineering, Computer Science, and Architectural Engineering, send only a few students to these same five universities. By introducing more partner universities, a wider range of majors can participate in the exchange program, ensuring that all students find the best academic fit.
 """)
 st.subheader("- Early Warning System")
-st.markdown("""Host universities should inform the department if an exchange student's midterm GPA drops below a certain level. In response, the department should take steps like reducing the student's course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
+st.markdown("""Host universities should inform the department if an exchange student midterm GPA drops below a certain level. In response, the department should take steps like reducing the student's course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
 """)
 
