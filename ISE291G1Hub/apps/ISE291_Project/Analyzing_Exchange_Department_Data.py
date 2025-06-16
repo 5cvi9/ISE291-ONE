@@ -82,10 +82,10 @@ st.subheader("Context")
 st.markdown("""
 We drew a random sample of 700 exchange students from various enrolment years to understand the distribution of host universities. All percentages and counts below refer to this cohort.
 
-- Colorado School of Mines hosted the largest share, roughly 29% of our sample.
-- University of Florida follows with about 22%.
-- Georgia Tech accounts for 21%.
-- University of North Texas and University of Cincinnati round out the top five with 15% and 13%  respectively.
+- Colorado School of Mines hosted the largest share, roughly 26.8% of our sample.
+- University of Florida follows with about 20%.
+- Arizona State University accounts for 21%.
+- University of North Texas and University of Georgia Tech round out the top five with 13% and 19%  respectively.
 
 Together, these five institutions represent the vast majority of placements, with Colorado School of Mines being the top university attended by students.
 """)
@@ -125,7 +125,7 @@ st.markdown("""
 
 3. **Industrial & Systems Engineering (ISE)**
    - University of Florida **34** students.  
-   - Arizona State University **29** students.  
+   - Arizona State University **30** students.  
    
 
 4. Chemical Engineering (CHE)**
@@ -164,8 +164,8 @@ Strong in ME (40 students) and PETE (34).
 - Georgia Tech
 Dominates EE with 45 students, showcasing its leading electrical engineering department.
 
-- University of Cincinnati
-Host 21 EE students and 11 CHE.
+- Arizona State University
+Host 30 ISE students and 19 ME.
 
 - University of Florida
 Has a balanced spread but is strongest in ISE (34) and CHE (24).
