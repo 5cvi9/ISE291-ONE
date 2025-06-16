@@ -386,14 +386,14 @@ st.subheader("Box Plot of Differences")
 st.markdown("""
      
         - The center line shows the median drop of about 0.37 GPA points.
-        - he box covers the middle 50% of students, whose drops range from 0 up to about 0.84.
-        -The whiskers stretch from roughly –1.2 (host GPA > home) to +2.1, showing most students full range.
+        - The box covers the middle 50% of students, whose drops range from 0 up to about 0.84.
+        - The whiskers stretch from roughly –1.2 (host GPA > home) to +2.1, showing most students full range.
 
         note: Any dots outside those whiskers are rare cases with unusually big changes.
         
     """)
 
-st.subheader("OVER ALL")
+st.subheader("OVERALL")
 st.markdown("""
      
         Most students see a small drop in GPA when they go abroad about 0.4 points on average. Half of them lose between 0 and 0.8 points, a few actually improve ,Only a few individuals experience big changes in either direction.
