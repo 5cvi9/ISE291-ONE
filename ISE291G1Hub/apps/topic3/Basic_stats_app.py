@@ -16,7 +16,8 @@ This application visualizes data from the KFUPM exchange program.
 Below, you’ll find interactive charts that help you understand:
 
 - **Top 5 Host Universities**: Which universities hosted the most students.
-- **Top Majors**n- **GPA Distributions** by sponsor and major.
+- **Top Majors**
+- **GPA Distributions** by sponsor and major.
 - **Comparisons** between universities and majors.
 - **Correlation** among key numerical features.
 """)
@@ -24,25 +25,42 @@ Below, you’ll find interactive charts that help you understand:
 st.title("Exchange Program Data Analysis")
 
 # Resolve data path relative to this script
-def load_dataset():
+def load_datasets():
     base = os.path.dirname(__file__)
-    excel_path = os.path.join(base, 'Book2.xlsx')
-    csv_path = os.path.join(base, 'Book2.csv')
+
+    # -- Book2 (primary) --
+    excel2 = os.path.join(base, 'Book2.xlsx')
+    csv2   = os.path.join(base, 'Book2.csv')
     try:
-        return pd.read_excel(excel_path)
+        df2 = pd.read_excel(excel2)
     except FileNotFoundError:
-        return pd.read_csv(csv_path)
+        df2 = pd.read_csv(csv2)
+
+    # -- Book1_GPA (secondary) --
+    excel1 = os.path.join(base, 'Book1_GPA.xlsx')
+    try:
+        df1 = pd.read_excel(excel1)
+    except FileNotFoundError:
+        df1 = None
+
+    return df2, df1
 
 # Load data
-df = load_dataset()
+df, df1 = load_datasets()
 
-st.subheader("Raw Data Preview")
+st.subheader("Raw Data Preview (Book2)")
 st.dataframe(df.sample(5))
+
+if df1 is not None:
+    st.subheader("Raw Data Preview (Book1_GPA)")
+    st.dataframe(df1.sample(5))
+else:
+    st.warning("⚠️ Book1_GPA.xlsx not found in the app directory.")
 
 # Clean sponsor names
 df['Sponsor Name'] = df['Sponsor Name'].replace({
     'Fully Sponsored by KFUPM': 'Fully KFUPM',
-    'KFUPM-Partial Sponsor': 'Partialy KFUPM'
+    'KFUPM-Partial Sponsor':  'Partialy KFUPM'
 })
 
 # 1. Top 5 Host Universities (Pie Chart)
