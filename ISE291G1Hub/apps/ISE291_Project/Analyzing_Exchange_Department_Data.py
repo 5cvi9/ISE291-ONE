@@ -205,7 +205,7 @@ Fully KFUPM students tend to have higher GPAs overall (median around 3.7–3.8) 
 
 KFUPM Fund shows a slightly lower median (around 3.3–3.4) and a wider spread, indicating more variability.
 
-Sponsors like SAUDI ARAMCO and SABIC also show high median GPAs (3.7–3.9).
+Sponsors like SAUDI ARAMCO and SABIC also show high median GPAs.
 
 Self-funded and Ministry of Education categories can have wider ranges and lower minimums, suggesting a broader mix of academic performance.
 
