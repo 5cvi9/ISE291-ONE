@@ -79,10 +79,10 @@ st.subheader("Context")
 st.markdown("""
 We drew a random sample of 700 exchange students from various enrolment years to understand the distribution of host universities. All percentages and counts below refer to this cohort.
 
-- Colorado School of Mines hosted the largest share, roughly 29% of our sample (≈ 203 students).
-- University of Florida follows with about 22% (≈ 155 students).
-- Georgia Tech accounts for 21% (≈ 147 students).
-- University of North Texas and University of Cincinnati round out the top five with 15% (≈ 105) and 13% (≈ 91) respectively.
+- Colorado School of Mines hosted the largest share, roughly 29% of our sample.
+- University of Florida follows with about 22%.
+- Georgia Tech accounts for 21%.
+- University of North Texas and University of Cincinnati round out the top five with 15% and 13%  respectively.
 
 Together, these five institutions represent the vast majority of placements, with Colorado School of Mines being the top university attended by students.
 """)
@@ -110,39 +110,37 @@ st.markdown("""
     
     This heatmap shows how the top seven host institutions distribute students across all majors.
 
-1. Mechanical Engineering (ME)
+1. **Mechanical Engineering (ME)**
+   - Georgia Tech: **45** students  
+   - Colorado School of Mines: **40**  
+   - University of Florida: **34**  
+   - Other notable hosts: Arizona State (29), North Texas (21), Arizona (12), Cincinnati (11)
 
-Georgia Tech leads, hosting 45 ME students.
-Colorado School of Mines follows with 40.
-University of Florida then takes 34.
-Smaller ME cohorts scatter among Cincinnati, North Texas, and Arizona State.
+2. **Electrical Engineering (EE)**
+   - University of Florida: **34**  
+   - Colorado School of Mines: **27**  
+   - University of North Texas: **15**  
+   - Others: Georgia Tech (7), Cincinnati (6), Arizona (2)
 
-2. Electrical Engineering (EE)
+3. **Industrial & Systems Engineering (ISE)**
+   - Colorado School of Mines: **34**  
+   - University of Florida: **24**  
+   - Georgia Tech: **16**  
+   - Runners-up: Cincinnati (6), North Texas (5), Arizona State (0 for this sample)
 
-University of Florida is the top EE destination with 34 students.
-Colorado School of Mines hosts 27 EE students.
-University of North Texas comes next at 15.
-A handful of EE students also go to Georgia Tech and Cincinnati.
+4. Chemical Engineering (CHE)**
+   - University of Florida: **24**  
+   - University of Cincinnati: **21**  
+   - Georgia Tech: **7**  
+   - Colorado School of Mines & North Texas: **3–4** each
 
-3. Industrial & Systems Engineering (ISE)
+5. **Petroleum Engineering (PETE)**
+   - Colorado School of Mines: **34**  
+   - University of Florida: **8**  
+   - Georgia Tech & Cincinnati: **2–4** each  
 
-Colorado School of Mines again leads for ISE with 34 students.
-University of Florida hosts 24 ISE students.
-Georgia Tech follows at 16.
-The remainder are spread across Cincinnati, North Texas, and Arizona State.
+> *Note:* The lighter “long tail” cells in your heatmap reflect many smaller programs beyond these core five.  
 
-4. Chemical Engineering (CHE)
-
-University of Florida hosts 24 CHE students.
-University of Cincinnati takes 21.
-Georgia Tech hosts 7 CHE students.
-Colorado and North Texas each host a small number (3–4) of CHE majors.
-
-5. Petroleum Engineering (PETE)
-
-Colorado School of Mines is the primary PETE destination with 34 students.
-University of Florida hosts 8 PETE students.
-Georgia Tech and Cincinnati each take a handful (2–4) of PETE majors.
 
 The lighter cells across many universities and majors show a long tail of smaller exchanges, indicating a broad but shallow spread beyond the core programs.
 
