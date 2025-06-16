@@ -330,3 +330,33 @@ st.markdown("""
         - Range ~ 61–107: Whiskers cover most scores; multiple outliers above 110 show some students achieve exceptionally high results.
         
     """)
+st.subheader("GPA Comparison (Home vs Host)")
+
+    # 1. Scatter plot
+fig_scatter, ax_scatter = plt.subplots()
+ax_scatter.scatter(df1['GPA'], df1['Host GPA'])
+ax_scatter.set_title('Home GPA vs Host GPA')
+ax_scatter.set_xlabel('Home GPA')
+ax_scatter.set_ylabel('Host GPA')
+st.pyplot(fig_scatter)
+
+    # 2. Compute difference stats
+df1['GPA Difference'] = df1['GPA'] - df1['Host GPA']
+diff_stats = df1['GPA Difference'].describe().to_frame().T
+st.subheader("GPA Difference Statistics")
+st.table(diff_stats)
+
+    # 3. Histogram of GPA Difference
+fig_hist, ax_hist = plt.subplots()
+ax_hist.hist(df1['GPA Difference'].dropna(), bins=20)
+ax_hist.set_title('Distribution of GPA Difference (Home – Host)')
+ax_hist.set_xlabel('GPA Difference')
+ax_hist.set_ylabel('Frequency')
+st.pyplot(fig_hist)
+
+    # 4. Box plot of GPA Difference
+fig_box, ax_box = plt.subplots()
+ax_box.boxplot(df1['GPA Difference'].dropna(), vert=True, patch_artist=True)
+ax_box.set_title('Box Plot of GPA Difference (Home – Host)')
+ax_box.set_ylabel('GPA Difference')
+st.pyplot(fig_box)
