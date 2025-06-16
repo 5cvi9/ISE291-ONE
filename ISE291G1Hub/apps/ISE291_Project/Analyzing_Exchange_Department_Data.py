@@ -120,7 +120,7 @@ st.markdown("""
 
 2. **Electrical Engineering (EE)**
    - University of Cincinnati **21** students.
-   - Georgia Tech: **45** students.     
+   - Georgia Tech **45** students.     
 
 
 3. **Industrial & Systems Engineering (ISE)**
@@ -128,7 +128,7 @@ st.markdown("""
    - Arizona State University **30** students.  
    
 
-4. Chemical Engineering (CHE)**
+4. **Chemical Engineering (CHE)**
    - University of Florida **24** students. 
    - Colorado School of Mines **27** students.  
   
@@ -162,7 +162,7 @@ This clustered bar chart compares the distribution of students in the five most 
 Strong in ME (40 students) and PETE (34).
 
 - Georgia Tech
-Dominates EE with 45 students, showcasing its leading electrical engineering department.
+Host EE with 45 students, showcasing its leading electrical engineering department.
 
 - Arizona State University
 Host 30 ISE students and 19 ME.
@@ -240,7 +240,7 @@ Most ME students cluster between roughly 3.3 and 3.6, with the central line righ
 
 2- Electrical Engineering (EE)
 Median GPA ≈ 3.45
-Very similar to ME, reflecting a strong, consistent performance in EE.
+Reflecting a strong, consistent performance in EE.
 
 3- Industrial & Systems Engineering (ISE)
 Median GPA ≈ 3.25
@@ -252,7 +252,7 @@ CHE sits in the mid-3’s, with most students between 3.0 and 3.6.
 
 5- Petroleum Engineering (PETE)
 Median GPA ≈ 3.60
-Very similar to CHE, reflecting a tight cluster around the lower mid-3’s.
+Reflecting a tight cluster around the lower mid-3’s.
 
 6- Software Engineering (SWE)
 Median GPA ≈ 3.40
@@ -308,7 +308,7 @@ st.subheader("TOEFL Score Distribution")
 st.markdown("""
      
         - Median ≈ 78: The middle TOEFL score is around 78.
-        - IQR ~ 72–87: 50% of TOEFL scores span this 15-point window
+        - IQR ~ 72–87: 50% of TOEFL scores span this 15-point.
         - Range ~ 61–107: Whiskers cover most scores; multiple outliers above 110 show some students achieve exceptionally high results.
         
     """)
@@ -325,7 +325,7 @@ st.subheader("KFUPM GPA vs. Host GPA (Scatter Plot)")
 st.markdown("""
      
         - Each dot represents one student’s KFUPM GPA (x-axis) and their host-university GPA (y-axis).
-        - students’ grades at their host university tend to be a bit lower than at KFUPM.
+        - students grades at their host university tend to be a bit lower than at KFUPM.
         - The overall upward trend confirms that strong performers at KFUPM generally remain strong performers abroad.
         
     """)
@@ -351,7 +351,7 @@ st.pyplot(fig_hist)
 st.subheader("Distribution (Histogram)")
 st.markdown("""
      
-        - Most students’ differences cluster just above zero, confirming a small grade drop abroad for the majority.
+        - Most students differences cluster just above zero, confirming a small grade drop abroad for the majority.
         - A few students actually scored higher abroad (the bars left of zero).
         - A small number experienced a large drop (bars out toward +2 or +3).
         
@@ -378,7 +378,7 @@ st.markdown("""
 st.subheader("OVERALL")
 st.markdown("""
      
-        Most students see a small drop in GPA when they go abroad about 0.4 points on average. Half of them lose between 0 and 0.8 points, a few actually improve ,Only a few individuals experience big changes in either direction.
+        Most students see a small drop in GPA when they go abroad about 0.4 points on average. Half of them lose between 0 and 0.8 points, a few actually improve ,Only a few students experience big changes in either direction.
         
     """)
 st.markdown("""
