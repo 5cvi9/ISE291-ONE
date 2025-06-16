@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 # Set style
 sns.set(style="whitegrid")
@@ -23,10 +24,16 @@ Below, you’ll find interactive charts that help you understand:
 st.title("Exchange Program Data Analysis")
 
 # Load data directly from Book2.xlsx or Book2.csv
+
+
+# in Basic_stats_app.py
+base = os.path.dirname(__file__)                  # e.g. ".../apps/topic3"
+excel_path = os.path.join(base, 'Book2.xlsx')
 try:
-    df = pd.read_excel('Book2.xlsx')
+    df = pd.read_excel(excel_path)
 except FileNotFoundError:
-    df = pd.read_csv('Book2.csv')
+    df = pd.read_csv(os.path.join(base, 'Book2.csv'))
+
 
 st.subheader("Raw Data Preview")
 st.dataframe(df.sample(5))
