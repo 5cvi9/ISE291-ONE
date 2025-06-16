@@ -24,10 +24,6 @@ Below, you’ll find interactive charts that help you understand:
 
 st.title("Exchange Program Data Analysis")
 
-st.set_page_config(page_title="ISE 291 Streamlit Hub")
-st.title("ISE 291 Term 242 Section F22 Streamlit Hub")
-
-# === 1) DATA LOADING ===
 def load_datasets():
     base = os.path.dirname(__file__)
 
@@ -51,54 +47,7 @@ def load_datasets():
 df, df1 = load_datasets()
 
 
-# === 2) TOPICS & SUB‐APPS ===
-# Topics = any subfolder of this script
-BASE_DIR = os.path.dirname(__file__)
-topics = [
-    d for d in os.listdir(BASE_DIR)
-    if os.path.isdir(os.path.join(BASE_DIR, d)) and not d.startswith("__")
-]
-topic = st.selectbox("Choose a Topic", topics)
 
-# Sub‐apps = any .py file in the chosen topic folder (minus __init__.py)
-topic_path = os.path.join(BASE_DIR, topic)
-raw_subapps = [
-    f[:-3] for f in os.listdir(topic_path)
-    if f.endswith(".py") and f not in ("__init__.py",)
-]
-subapps = [""] + raw_subapps  # leading "" ensures never None
-sub_app = st.selectbox("Choose a Sub‐App", subapps)
-
-# === 3) GUARD & RUN ===
-if not sub_app:
-    st.info("⬅️ Please select a sub‐app to launch.")
-    st.stop()
-
-# build module path and import
-module_name = f"{topic}.{sub_app}"
-sys.path.insert(0, BASE_DIR)       # ensure parent dir is on PYTHONPATH
-try:
-    module = importlib.import_module(module_name)
-except ImportError as e:
-    st.error(f"Could not import `{module_name}`:\n{e}")
-    st.stop()
-
-# assume each sub‐app exposes a `main()` or `app()` function
-if hasattr(module, "app"):
-    module.app(df, df1)
-elif hasattr(module, "main"):
-    module.main(df, df1)
-else:
-    st.error(f"`{module_name}` has no `app()` or `main()` function."))
-
-st.subheader("Raw Data Preview (Book2)")
-st.dataframe(df.sample(5))
-
-if df1 is not None:
-    st.subheader("Raw Data Preview (Book1_GPA)")
-    st.dataframe(df1.sample(5))
-else:
-    st.warning("⚠️ Book1_GPA.xlsx not found in the app directory.")
 
 # Clean sponsor names
 df['Sponsor Name'] = df['Sponsor Name'].replace({
