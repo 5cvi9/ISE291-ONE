@@ -392,4 +392,25 @@ st.markdown("""
         Most students see a small drop in GPA when they go abroad about 0.4 points on average. Half of them lose between 0 and 0.8 points, a few actually improve ,Only a few individuals experience big changes in either direction.
         
     """)
+st.markdown("""
+#Recommandations:
 
+
+-Adding More Universities
+
+Most students tend to enroll in the same five universities: Colorado School of Mines, University of Florida, Georgia Tech, University of North Texas, and University of Cincinnati. These institutions host nearly all students majoring in Mechanical Engineering (ME), Electrical Engineering (EE), Industrial and Systems Engineering (ISE), Chemical Engineering (CHE), and Petroleum Engineering (PETE).
+
+However, other majors, such as Software Engineering, Financial Engineering, Computer Science, and Architectural Engineering, send only a few students to these same five universities. By introducing more partner universities, we can allow a wider range of majors to participate in the exchange program, ensuring that all students find the best academic fit.
+
+
+-Early Warning System
+
+Host universities will inform the department if an exchange student's midterm GPA drops below a certain level. In response, the department will take steps like reducing the student course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
+
+
+
+-
+
+
+
+""")
