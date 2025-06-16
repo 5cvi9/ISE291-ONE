@@ -278,11 +278,7 @@ st.subheader("Total Completed Hours Distribution")
 fig8, ax8 = plt.subplots(figsize=(8, 4))
 sns.histplot(df['Total Completed Hours'], bins=20, kde=True, ax=ax8)
 st.pyplot(fig8)
-st.markdown("""
-- Peak around 36–40 hours.
-- Secondary bump at 65–75 hours.
-- Long tail up to 85 hours.
-""")
+
 
 st.subheader("Total Completed Hours Distribution")
 st.markdown("""
