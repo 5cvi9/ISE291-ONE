@@ -25,17 +25,19 @@ Below, you’ll find interactive charts that help you understand:
 st.title("Exchange Program Data Analysis")
 
 def load_datasets():
-    base = os.path.dirname(__file__)
-
-    # primary exchange data: try xlsx, then csv
+    # Set the base path
+    base = os.path.join("ISE291G1Hub", "apps", "ISE291_Project")
+    
+    # Primary exchange data: try xlsx, then csv
     excel2 = os.path.join(base, "Book2.xlsx")
-    csv2   = os.path.join(base, "Book2.csv")
+    csv2 = os.path.join(base, "Book2.csv")
+    
     try:
         df2 = pd.read_excel(excel2)
     except FileNotFoundError:
         df2 = pd.read_csv(csv2)
 
-    # optional GPA file
+    # Optional GPA file
     excel1 = os.path.join(base, "Book1_GPA.xlsx")
     try:
         df1 = pd.read_excel(excel1)
@@ -45,7 +47,6 @@ def load_datasets():
     return df2, df1
 
 df, df1 = load_datasets()
-
 
 
 
