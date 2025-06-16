@@ -23,9 +23,7 @@ Below, you’ll find interactive charts that help you understand:
 
 st.title("Exchange Program Data Analysis")
 
-# Load data directly from Book2.xlsx or Book2.csv
-
-
+# Resolve data path relative to this script
 def load_dataset():
     base = os.path.dirname(__file__)
     excel_path = os.path.join(base, 'Book2.xlsx')
@@ -35,13 +33,17 @@ def load_dataset():
     except FileNotFoundError:
         return pd.read_csv(csv_path)
 
+# Load data
+df = load_dataset()
 
 st.subheader("Raw Data Preview")
 st.dataframe(df.sample(5))
 
 # Clean sponsor names
-df['Sponsor Name'] = df['Sponsor Name'].replace({'Fully Sponsored by KFUPM': 'Fully KFUPM',
-                                                 'KFUPM-Partial Sponsor': 'Partialy KFUPM'})
+df['Sponsor Name'] = df['Sponsor Name'].replace({
+    'Fully Sponsored by KFUPM': 'Fully KFUPM',
+    'KFUPM-Partial Sponsor': 'Partialy KFUPM'
+})
 
 # 1. Top 5 Host Universities (Pie Chart)
 st.subheader("Top 5 Host Universities")
