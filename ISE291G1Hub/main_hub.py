@@ -16,7 +16,7 @@ st.markdown("Welcome GROUP1.")
 # ——————————————————————————————————————————————————————————————
 # apps are under <this file>/ISE291G1Hub/apps
 BASE_DIR  = os.path.dirname(__file__)
-APPS_DIR  = os.path.join(BASE_DIR, "ISE291G1Hub", "apps")
+APPS_DIR  = os.path.join(BASE_DIR, "apps", "ISE291_Project")
 
 if not os.path.isdir(APPS_DIR):
     st.error(f"Apps directory not found:\n{APPS_DIR}")
