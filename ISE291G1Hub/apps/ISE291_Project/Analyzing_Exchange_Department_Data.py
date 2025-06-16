@@ -165,7 +165,7 @@ st.markdown("""
 This clustered bar chart compares the distribution of students in the five most popular majors—CHE, EE, ISE, ME, and PETE—across our top five host institutions:
 
 - Colorado School of Mines
-Strong in ME (40 students) and PETE (34), reflecting its well-known engineering and petroleum programs.
+Strong in ME (40 students) and PETE (34).
 Also hosts 27 EE and 11 CHE students, with a smaller presence in ISE.
 
 - Georgia Tech
@@ -173,15 +173,15 @@ Dominates EE with 45 students, showcasing its leading electrical engineering dep
 Welcomes 16 ME and 7 CHE students, but very few in ISE and PETE.
 
 - University of Cincinnati
-Attracts 21 CHE students and 11 ME, with a modest number (6) of EE students and very few PETE or ISE.
+Host 21 CHE students and 11 ME, with (6) of EE students and very few PETE or ISE.
 
 - University of Florida
-Has a balanced spread but is strongest in ISE (34) and ME (24), underlining its interdisciplinary engineering strengths.
+Has a balanced spread but is strongest in ISE (34) and ME (24).
 Also hosts 14 CHE and 8 EE students, with minimal PETE representation.
 
 - University of North Texas
 Draws 21 ME students and 6 EE students.
-PETE (2) and CHE (1) are niche offerings here, with almost no ISE placements.
+PETE (2)  CHE (1) with almost no ISE placements.
 """)
 
 # 3. GPA by Sponsor (Box Plot Top 7)
@@ -295,8 +295,8 @@ st.pyplot(fig8)
 st.subheader("Total Completed Hours Distribution")
 st.markdown("""
     - The bulk of students have completed 30–45 hours, with a clear peak around 36–40 hours.
-    - A secondary bump appears around 65–75 hours, representing upper-class students who went later in their studies.
-    - The long tail to the right suggests a smaller group of very senior students (75–85 hours) who also participated.
+    - A secondary bump appears around 65–75 hours.
+    - The long tail to the right suggests a smaller group of (75–85 hours) who also participated.
     """)
 
 # Tag Test Type & Score Distribution
