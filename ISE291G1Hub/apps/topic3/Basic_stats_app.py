@@ -207,6 +207,8 @@ Sponsors like SAUDI ARAMCO and SABIC also show high median GPAs (3.7–3.9).
 Self-funded and Ministry of Education categories can have wider ranges and lower minimums, suggesting a broader mix of academic performance.
 
 """)
+data = df[df['Major'].isin(top10_majors)]
+
 
 st.subheader("GPA Distribution by Major (Top 10)")
 fig6, ax6 = plt.subplots(figsize=(12, 5))
