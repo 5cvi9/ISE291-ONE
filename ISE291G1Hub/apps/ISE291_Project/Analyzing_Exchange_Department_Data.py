@@ -393,7 +393,7 @@ st.markdown("""
         
     """)
 st.markdown("""
-#Recommandations:
+# Recommandations:
 
 
 -Adding More Universities
@@ -409,7 +409,7 @@ Host universities will inform the department if an exchange student's midterm GP
 
 
 
--
+
 
 
 
