@@ -270,7 +270,7 @@ Median GPA ≈ 3.55
 Median GPA ≈ 3.20
 
 10- Architectural Engineering (ARC)
-Median GPA ≈ 3.70
+Median GPA ≈ 3.65
 The highest median of all ten majors, suggesting ARC students generally achieve the top GPAs in our sample.
 """)
 
