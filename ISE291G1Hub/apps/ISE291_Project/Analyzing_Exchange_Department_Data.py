@@ -15,11 +15,11 @@ We took a sample of students from various years—about 700 in total—to get a 
 This application visualizes data from the KFUPM exchange program.
 Below, you’ll find interactive charts that help you understand:
 
-- **Top 5 Host Universities: Which universities hosted the most students.
-- **Top Majors: The most popular fields of study among exchange participants.
-- **GPA Distributions by Sponsor and Major: How student GPAs vary across different sponsors and academic majors.
-- **Comparisons Between Universities and Majors: Side-by-side analysis of program sizes and performance across institutions and disciplines.
-- **Correlation Among Key Numerical Features: Relationships between metrics like GPA, completed credit hours, and language‐test scores.
+- Top 5 Host Universities: Which universities hosted the most students.
+- Top Majors: The most popular fields of study among exchange participants.
+- GPA Distributions by Sponsor and Major: How student GPAs vary across different sponsors and academic majors.
+- Comparisons Between Universities and Majors: Side-by-side analysis of program sizes and performance across institutions and disciplines.
+- Correlation Among Key Numerical Features: Relationships between metrics like GPA, completed credit hours, and language‐test scores.
 """)
 
 st.title("Exchange Program Data Analysis")
