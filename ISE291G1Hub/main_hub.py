@@ -25,4 +25,4 @@ Load and Run the Selected Sub-App
 app_path = os.path.join(topic_path, sub_app)
 spec = importlib.util.spec_from_file_location("sub_app", app_path)
 sub_app_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(sub_app_module) fix to path ISE291G1Hub/apps/ISE291_Projec
+spec.loader.exec_module(sub_app_module)
