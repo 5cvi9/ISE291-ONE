@@ -402,6 +402,6 @@ Most students tend to enroll in the same five universities: Colorado School of M
 However, other majors, such as Software Engineering, Financial Engineering, Computer Science, and Architectural Engineering, send only a few students to these same five universities. By introducing more partner universities, a wider range of majors can participate in the exchange program, ensuring that all students find the best academic fit.
 """)
 st.subheader("- Early Warning System")
-st.markdown("""Host universities would inform the department if an exchange student's midterm GPA drops below a certain level. In response, the department would take steps like reducing the student's course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
+st.markdown("""Host universities should inform the department if an exchange student's midterm GPA drops below a certain level. In response, the department should take steps like reducing the student's course load or offering one-on-one tutoring to help prevent small academic issues from becoming bigger problems by the end of the term.
 """)
 
